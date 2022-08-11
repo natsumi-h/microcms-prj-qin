@@ -16,10 +16,11 @@ module.exports = {
   rules: {
     "react/prop-types": "off",
     "react/jsx-props-no-spreading": "off",
+    "react/react-in-jsx-scope": "off",
   },
-  setting: {
+  settings: {
     react: {
-      versions: "detect",
+      version: "detect",
     },
   },
 };

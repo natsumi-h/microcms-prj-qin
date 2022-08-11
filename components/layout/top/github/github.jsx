@@ -1,7 +1,7 @@
 import { Button } from "../button";
 import { GithubList } from "./githubList";
 
-export function Github(props) {
+export function Github() {
   return (
     <div>
       <ul>

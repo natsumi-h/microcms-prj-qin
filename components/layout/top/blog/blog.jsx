@@ -1,7 +1,7 @@
 import { Button } from "../button";
 import { BlogList } from "./blogList";
 
-export function Blog(props) {
+export function Blog() {
   return (
     <div>
       <ul className="my-10">
