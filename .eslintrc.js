@@ -18,9 +18,9 @@ module.exports = {
     "react/jsx-props-no-spreading": "off",
     "react/react-in-jsx-scope": "off",
   },
-  settings: {
-    react: {
-      version: "detect",
-    },
-  },
+  // settings: {
+  //   react: {
+  //     version: "detect",
+  //   },
+  // },
 };
