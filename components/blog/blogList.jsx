@@ -14,7 +14,7 @@ export function BlogList(props) {
       {router.pathname == "/"
         ? filteredBlogProps.map((blog) => (
             <li className="my-10" key={blog.id}>
-              <Link href={`/blog/${blog.id}`}>
+              <Link href={`/blog/${blog.slug}`}>
                 <a>
                   <p className="font-bold text-3xl"> {blog.title}</p>
                   <BlogBody blogBody={blog.body} />
@@ -25,7 +25,7 @@ export function BlogList(props) {
           ))
         : blogProps.map((blog) => (
             <li className="my-10" key={blog.id}>
-              <Link href={`/blog/${blog.id}`}>
+              <Link href={`/blog/${blog.slug}`}>
                 <a>
                   <p className="font-bold text-3xl"> {blog.title}</p>
                   <BlogBody blogBody={blog.body} />
@@ -35,6 +35,5 @@ export function BlogList(props) {
             </li>
           ))}
     </div>
-
   );
 }
