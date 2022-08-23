@@ -5,7 +5,7 @@ import { useForm } from "react-hook-form";
 export default function Contact() {
   const {
     register,
-    watch,
+    // watch,
     handleSubmit,
     formState: { errors },
   } = useForm({
@@ -16,15 +16,45 @@ export default function Contact() {
     },
   });
 
-  const onSubmit = (data) => {
-    alert(
-      `メール：${data.email}\n名前：${data.name} \nメッセージ：${data.message}`
-    );
+  const onSubmit = async (data) => {
+    // alert(
+    //   `メール：${data.email}\n名前：${data.name} \nメッセージ：${data.message}`
+    // );
     // alert(data);
-    console.log(data);
+    // console.log(data);
+
+    const API_SUBDOMAIN = process.env.NEXT_PUBLIC_MICROCMS_SERVICEDOMAIN;
+    const APIKEY = process.env.NEXT_PUBLIC_MICROCMS_APIKEY;
+
+    try {
+      const res = await fetch(
+        `https://${API_SUBDOMAIN}.microcms.io/api/v1/contact/`,
+        {
+          method: "POST",
+          headers: {
+            "Content-Type": "application/json",
+            "X-MICROCMS-API-KEY": APIKEY,
+          },
+          body: JSON.stringify(data),
+        }
+      );
+      if (!res.ok) {
+        if (res.status === 403 || res.status === 401) {
+          console.log("anthorization failed");
+          return;
+        }
+        console.log("something went wrong");
+        return;
+      } else {
+        console.log("success");
+      }
+    } catch (error) {
+      //サーバーにまったくアクセスできない場合
+      console.log(error);
+    }
   };
 
-  console.log(watch);
+  // console.log(watch);
 
   // console.log(errors);
 
