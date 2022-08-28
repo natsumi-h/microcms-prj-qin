@@ -4,7 +4,7 @@ import { MainVisual } from "../components/layout/top/mv";
 import { Portfolio } from "../components/layout/top/portfolio/portfolio";
 import { Section } from "../components/layout/top/section";
 import { Twitter } from "../components/layout/top/twitter/twitter";
-import { client } from "../lib/client";
+import { client } from "../libs/client";
 // import Image from "next/image";
 // import styles from "../styles/Home.module.css";
 

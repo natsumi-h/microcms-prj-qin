@@ -1,5 +1,5 @@
 import { PageTitle } from "../../components/layout/page/title";
-import { client } from "../../lib/client";
+import { client } from "../../libs/client";
 import dayjs from "dayjs";
 
 export default function BlogSinglePage(props) {

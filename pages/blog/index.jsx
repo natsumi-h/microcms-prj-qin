@@ -1,6 +1,6 @@
 import { Blog } from "../../components/blog/blog";
 import { PageTitle } from "../../components/layout/page/title";
-import { client } from "../../lib/client";
+import { client } from "../../libs/client";
 
 
 export default function BlogPage(blog) {
