@@ -28,7 +28,7 @@ export function Portfolio() {
         />
       </ul>
 
-      <Button text="View All" />
+      <Button text="View All" href="/portfolio"/>
     </div>
   );
 }

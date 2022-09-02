@@ -30,7 +30,7 @@ export function Github() {
           date="date4 2022/08/11"
         />
       </ul>
-      <Button text="View on Github" />
+      <Button text="View on Github" href="https://github.com/"/>
     </div>
   );
 }

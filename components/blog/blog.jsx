@@ -12,7 +12,7 @@ export function Blog(props) {
         <BlogList apiprops={props.apiprops.blog} />
       </ul>
 
-      {router.pathname == "/" && <Button text="View All" />}
+      {router.pathname == "/" && <Button text="View All" href="/blog"/>}
     </div>
   );
 }

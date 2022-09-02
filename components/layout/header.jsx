@@ -33,7 +33,7 @@ export function Header() {
                   )}
                 </Disclosure.Button>
               </div>
-              <div className="flex-1 flex items-center justify-center  sm:justify-start">
+              <div className="flex-1 flex items-center   justify-between ">
                 <Link className="flex-shrink-0 flex items-center " href="/">
                   shimabu it university
                   {/* <img
@@ -47,8 +47,9 @@ export function Header() {
                     alt="Workflow"
                   /> */}
                 </Link>
-                <div className="hidden sm:block sm:ml-6">
-                  <div className="flex space-x-4">
+                <div className="hidden sm:block sm:ml-6 
+                ">
+                  <div className="flex space-x-4 ">
                     {navigation.map((item) => (
                       <a
                         key={item.name}

@@ -8,7 +8,7 @@ export function Twitter() {
         <li>twitterlist</li>
         <li>twitterlist</li>
       </ul>
-      <Button text="View on Twitter" />
+      <Button text="View on Twitter" href="https://twitter.com/" />
     </div>
   );
 }
