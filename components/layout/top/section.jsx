@@ -1,7 +1,7 @@
 export function Section(props) {
   const classContent = () => {
     if (props.half == "true") {
-      return "pb-20 pt-20 px-5 md:w-6/12 md:px-40";
+      return "pb-20 pt-20 px-5 md:w-6/12 md:px-20";
     } else {
       return " pb-20 pt-20 px-5 md:px-40";
     }
