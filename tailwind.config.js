@@ -11,6 +11,7 @@ module.exports = {
       dark: "#25262B",
       white: "#FFFFFF",
       gray: "#E9ECEF",
+      link: "#228BE6",
     },
     fontFamily: {
       yugothic: [

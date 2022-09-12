@@ -9,7 +9,7 @@ import { client } from "../libs/client";
 // import styles from "../styles/Home.module.css";
 
 export default function Home(props) {
-  // console.log(props);
+  console.log(props);
   return (
     <div>
       <MainVisual />
@@ -29,8 +29,16 @@ export default function Home(props) {
 
 export const getStaticProps = async () => {
   const data = await client.get({ endpoint: "blog" });
+  const params = {
+    exclude: "retweets,replies",
+    expansions: "author_id",
+    "tweet.fields": "created_at,entities",
+    "user.fields": "id,username,name,profile_image_url",
+    max_results: "5",
+  };
+  const query = new URLSearchParams(params);
   const tweetsRes = await fetch(
-    `https://api.twitter.com/2/users/${process.env.NEXT_PUBLIC_TWITTER_USERID}/tweets?exclude=retweets,replies&tweet.fields=created_at&expansions=author_id&user.fields=id,username,name,profile_image_url`,
+    `https://api.twitter.com/2/users/${process.env.NEXT_PUBLIC_TWITTER_USERID}/tweets?${query}`,
     {
       method: "GET",
       headers: {
@@ -40,6 +48,7 @@ export const getStaticProps = async () => {
     }
   );
   const tweetsData = await tweetsRes.json();
+  console.log(tweetsData);
   return {
     props: {
       blog: data.contents,
