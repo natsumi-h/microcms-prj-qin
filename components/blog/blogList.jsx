@@ -7,7 +7,9 @@ export function BlogList(props) {
   const router = useRouter();
 
   const blogProps = props.apiprops;
-  const filteredBlogProps = blogProps.filter((blogProps, index) => index <= 2);
+  // const filteredBlogProps = blogProps.filter((blogProps, index) => index <= 2);
+  const filteredBlogProps = blogProps.slice(0, 3);
+
 
   return (
     <div>
