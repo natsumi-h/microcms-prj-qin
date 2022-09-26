@@ -1,5 +1,5 @@
 import { PageTitle } from "../../components/layout/page/title";
-import { client } from "../../libs/client";
+import { microcmsClient } from "../../libs/client";
 import dayjs from "dayjs";
 
 export default function BlogSinglePage(props) {
@@ -14,7 +14,7 @@ export default function BlogSinglePage(props) {
 
 //slugをパスにする
 export const getStaticPaths = async () => {
-  const BlogList = await client.getList({ endpoint: "blog" });
+  const BlogList = await microcmsClient.getList({ endpoint: "blog" });
   const slugs = BlogList.contents.map((content) => `/blog/${content.slug}`);
 
   return {

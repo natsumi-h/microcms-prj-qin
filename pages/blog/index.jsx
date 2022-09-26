@@ -1,10 +1,8 @@
 import { Blog } from "../../components/blog/blog";
 import { PageTitle } from "../../components/layout/page/title";
-import { client } from "../../libs/client";
-
+import { microcmsClient } from "../../libs/client";
 
 export default function BlogPage(blog) {
-
   return (
     <div className="pb-20 pt-20 px-5 md:px-40">
       <PageTitle title="Blog" />
@@ -14,7 +12,7 @@ export default function BlogPage(blog) {
 }
 
 export const getStaticProps = async () => {
-  const data = await client.get({ endpoint: "blog" });
+  const data = await microcmsClient.get({ endpoint: "blog" });
   return {
     props: {
       blog: data.contents,
