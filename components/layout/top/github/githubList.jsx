@@ -13,9 +13,11 @@ export function GithubList(props) {
 
           {githubRepo.languages.edges.map((language) => {
             return (
-              <div key={language.node.name}>
-                <p>{language.node.name}</p>
-                <p>{(language.size / githubRepo.languages.totalSize) * 100}%</p>
+              <div key={language.node.name} className="w-full bg-gray rounded-full h-2.5 mb-4">
+                <div
+                  className=" h-2.5 rounded-full"
+                  style={{ width: `${(language.size / githubRepo.languages.totalSize) * 100}%`, backgroundColor:`${language.node.color}`}}
+                ></div>
               </div>
             );
           })}
