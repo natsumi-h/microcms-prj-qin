@@ -24,7 +24,7 @@ export const getStaticPaths = async () => {
 };
 
 export const getStaticProps = async (ctx) => {
-  const BlogList = await client.getList({ endpoint: "blog" });
+  const BlogList = await microcmsClient.getList({ endpoint: "blog" });
   const currentSlug = ctx.params.slug;
   const contents = BlogList.contents;
   //contentsから、slugの値がcurrentSlugと等しいオブジェクトを見つけてresultに格納する
@@ -32,7 +32,7 @@ export const getStaticProps = async (ctx) => {
   //resultのidをもってくる
   const currentId = result.id;
   //該当のidのブログをもってくる
-  const BlogListDetail = await client.getListDetail({
+  const BlogListDetail = await microcmsClient.getListDetail({
     endpoint: "blog",
     contentId: currentId,
   });
