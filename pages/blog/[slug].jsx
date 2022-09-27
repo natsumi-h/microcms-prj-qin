@@ -1,5 +1,5 @@
 import { PageTitle } from "../../components/layout/page/title";
-import { microcmsClient } from "../../libs/client";
+import { microcmsClient } from "../../libs/microcmsClient";
 import dayjs from "dayjs";
 
 export default function BlogSinglePage(props) {

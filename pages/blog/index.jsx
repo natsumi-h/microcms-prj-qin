@@ -1,6 +1,6 @@
 import { Blog } from "../../components/blog/blog";
 import { PageTitle } from "../../components/layout/page/title";
-import { microcmsClient } from "../../libs/client";
+import { microcmsClient } from "../../libs/microcmsClient";
 
 export default function BlogPage(blog) {
   return (
