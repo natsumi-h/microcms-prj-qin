@@ -14,14 +14,15 @@ module.exports = {
       link: "#228BE6",
     },
     fontFamily: {
-      yugothic: [
-        "Yu Gothic",
-        "游ゴシック",
-        "YuGothic",
-        "游ゴシック体",
-        "ヒラギノ角ゴ Pro W3",
-        "メイリオ",
-        "sans-serif",
+      sans: [
+        // "Yu Gothic",
+        // "游ゴシック",
+        // "YuGothic",
+        // "游ゴシック体",
+        // "ヒラギノ角ゴ Pro W3",
+        // "メイリオ",
+        "Noto Sans JP",
+        "sans-serif"
       ],
       avenir: ["Avenir Next"],
     },

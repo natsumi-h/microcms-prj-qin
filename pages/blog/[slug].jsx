@@ -1,5 +1,5 @@
 import { PageTitle } from "../../components/layout/page/title";
-import { client } from "../../libs/client";
+import { microcmsClient } from "../../libs/microcmsClient";
 import dayjs from "dayjs";
 
 export default function BlogSinglePage(props) {
@@ -14,7 +14,7 @@ export default function BlogSinglePage(props) {
 
 //slugをパスにする
 export const getStaticPaths = async () => {
-  const BlogList = await client.getList({ endpoint: "blog" });
+  const BlogList = await microcmsClient.getList({ endpoint: "blog" });
   const slugs = BlogList.contents.map((content) => `/blog/${content.slug}`);
 
   return {
@@ -24,7 +24,7 @@ export const getStaticPaths = async () => {
 };
 
 export const getStaticProps = async (ctx) => {
-  const BlogList = await client.getList({ endpoint: "blog" });
+  const BlogList = await microcmsClient.getList({ endpoint: "blog" });
   const currentSlug = ctx.params.slug;
   const contents = BlogList.contents;
   //contentsから、slugの値がcurrentSlugと等しいオブジェクトを見つけてresultに格納する
@@ -32,7 +32,7 @@ export const getStaticProps = async (ctx) => {
   //resultのidをもってくる
   const currentId = result.id;
   //該当のidのブログをもってくる
-  const BlogListDetail = await client.getListDetail({
+  const BlogListDetail = await microcmsClient.getListDetail({
     endpoint: "blog",
     contentId: currentId,
   });
